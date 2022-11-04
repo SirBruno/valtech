@@ -23,6 +23,7 @@ body {
 
 .hero {
   padding: 0 100px;
+  height: 100vh;
 }
 
 .hero__nav {
@@ -151,8 +152,7 @@ body {
   position: absolute;
   width: 721.36px;
   height: 481.19px;
-  left: 408px;
-  top: -36.09px;
+  right: 0;
   filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.160784));
 }
 
@@ -161,4 +161,49 @@ body {
   object-fit: contain;
   z-index: -1;
   left: -28.68px;
+}
+
+// SECTION 2
+
+.sectionTwo {
+  height: 744px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sectionTwo__imgContainer {
+  height: 531px;
+  width: 944px;
+  position: relative;
+  margin: auto;
+}
+
+.sectionTwo__cta {
+  position: absolute;
+  width: 100%;
+}
+
+.sectionTwo__ctaText {
+  font-family: 'Playfair Display';
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 80px;
+  color: #fff;
+  margin: 0 0 60px;
+}
+
+.sectionTwo__ctaBtn {
+  font-family: Raleway;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: 1.05px;
+  background: #fff;
+  color: #4BA87D;
+  padding: 20px 48px;
+  border: 3px solid #fff;
+  margin-right: 45px;
+  display: inline-block;
 }

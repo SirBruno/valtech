@@ -33,6 +33,15 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <section className="sectionTwo">
+        <div className="sectionTwo__imgContainer">
+          <Image src="/section-two-image.png" alt="Decorative" fill quality={100} />
+        </div>
+        <div className="sectionTwo__cta">
+          <h2 className="sectionTwo__ctaText">Reach More Customers</h2>
+          <span className="sectionTwo__ctaBtn">LEARN HOW</span>
+        </div>
+      </section>
     </div>
   )
 }
