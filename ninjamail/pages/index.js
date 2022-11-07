@@ -42,6 +42,37 @@ export default function Home() {
           <span className="sectionTwo__ctaBtn">LEARN HOW</span>
         </div>
       </section>
+      <section className="sectionThree">
+        <div className="sectionThree__card">
+          <div className="sectionThree__imgContainer">
+            <Image src="/card-img-1.png" alt="Decorative" fill quality={100} />
+          </div>
+          <div className="sectionThree__textContainer">
+            <p className="sectionThree__cardText">
+              Launch campaigns but also find new customers. Our unique platform handles campaigns from start to end.
+            </p>
+            <a className="sectionThree__cardCta">{"Learn More >"}</a>
+          </div>
+        </div>
+        <div className="sectionThree__card">
+          <div className="sectionThree__imgContainer">
+            <Image src="/card-img-2.png" alt="Decorative" fill quality={100} />
+          </div>
+          <div className="sectionThree__textContainer">
+            <p className="sectionThree__cardText">
+              Start building and sharing with your team today. NinjaMail is renowned for its industry leading team collaboration tools.
+            </p>
+            <a className="sectionThree__cardCta">{"Learn More >"}</a>
+          </div>
+        </div>
+        <div>
+          <h2 className="sectionThree__title">The source for proven, engaging email campaigns</h2>
+          <p className="sectionThree__subtitle">{"Whether you're a startup, small business, e-commerce store, or want to promote your app, NinjaMail has the feature set tailored for your business."}</p>
+        </div>
+        <div className="sectionThree__bg">
+          <Image src="/slanted-green-bg.png" alt="Background" fill quality={100} />
+        </div>
+      </section>
     </div>
   )
 }
