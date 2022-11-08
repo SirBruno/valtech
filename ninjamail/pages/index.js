@@ -73,6 +73,29 @@ export default function Home() {
           <Image src="/slanted-green-bg.png" alt="Background" fill quality={100} />
         </div>
       </section>
+      <section className="sectionFour">
+        <div>
+          <div>
+            <h3>Frankie</h3>
+            <p>Member since 2016</p>
+          </div>
+          <Image src="/section-four-img-1.png" alt="Background" fill quality={100} />
+        </div>
+        <div>
+          <div>
+            <h3>Camile</h3>
+            <p>Member since 2012</p>
+          </div>
+          <Image src="/section-four-img-2.png" alt="Background" fill quality={100} />
+        </div>
+        <div>
+          <div>
+            <h3>Elayne</h3>
+            <p>Member since 2018</p>
+          </div>
+          <Image src="/section-four-img-3.png" alt="Background" fill quality={100} />
+        </div>
+      </section>
     </div>
   )
 }

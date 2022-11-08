@@ -284,3 +284,56 @@ body {
   z-index: 1;
   position: relative;
 }
+
+
+// SECTION 4
+
+.sectionFour {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  padding: 100px;
+}
+
+.sectionFour>div {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  align-items: end;
+  display: flex;
+}
+
+.sectionFour img {
+  object-fit: cover;
+}
+
+.sectionFour>div:not(:last-child) {
+  margin-right: 33px;
+}
+
+.sectionFour h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: Raleway;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 40px;
+  color: #fff;
+}
+
+.sectionFour p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: Raleway;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #fff;
+}
+
+.sectionFour div div {
+  padding: 24px;
+}
