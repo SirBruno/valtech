@@ -74,26 +74,35 @@ export default function Home() {
         </div>
       </section>
       <section className="sectionFour">
-        <div>
+        <div className="sectionFour__cards">
           <div>
-            <h3>Frankie</h3>
-            <p>Member since 2016</p>
+            <div>
+              <h3>Frankie</h3>
+              <p>Member since 2016</p>
+            </div>
+            <Image src="/section-four-img-1.png" alt="Background" fill quality={100} />
           </div>
-          <Image src="/section-four-img-1.png" alt="Background" fill quality={100} />
+          <div>
+            <div>
+              <h3>Camile</h3>
+              <p>Member since 2012</p>
+            </div>
+            <Image src="/section-four-img-2.png" alt="Background" fill quality={100} />
+          </div>
+          <div>
+            <div>
+              <h3>Elayne</h3>
+              <p>Member since 2018</p>
+            </div>
+            <Image src="/section-four-img-3.png" alt="Background" fill quality={100} />
+          </div>
         </div>
-        <div>
+        <div className="sectionFour__newsletter">
+          <h2>Learn how others are reaching their audience easier than ever before.</h2>
           <div>
-            <h3>Camile</h3>
-            <p>Member since 2012</p>
+            <input type="email" placeholder="Enter your email" />
+            <input type="submit" value="JOIN OUR LIST" />
           </div>
-          <Image src="/section-four-img-2.png" alt="Background" fill quality={100} />
-        </div>
-        <div>
-          <div>
-            <h3>Elayne</h3>
-            <p>Member since 2018</p>
-          </div>
-          <Image src="/section-four-img-3.png" alt="Background" fill quality={100} />
         </div>
       </section>
     </div>
