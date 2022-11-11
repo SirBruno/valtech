@@ -105,6 +105,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="sectionFive">
+        <h2 className="sectionFive__text">All the best brands already use us.</h2>
+        <div className="sectionFive__logos">
+          <div className="sectionFive__imgContainer">
+            <Image className="sectionFive__logo" src="/logo-1.png" alt="Logo" fill quality={100} />
+          </div>
+          <div className="sectionFive__imgContainer">
+            <Image className="sectionFive__logo" src="/logo-2.png" alt="Logo" fill quality={100} />
+          </div>
+          <div className="sectionFive__imgContainer">
+            <Image className="sectionFive__logo" src="/logo-3.png" alt="Logo" fill quality={100} />
+          </div>
+          <div className="sectionFive__imgContainer">
+            <Image className="sectionFive__logo" src="/logo-4.png" alt="Logo" fill quality={100} />
+          </div>
+          <div className="sectionFive__imgContainer">
+            <Image className="sectionFive__logo" src="/logo-5.png" alt="Logo" fill quality={100} />
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
