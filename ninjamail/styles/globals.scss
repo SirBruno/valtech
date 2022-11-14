@@ -438,3 +438,34 @@ body {
   line-height: 48px;
   margin: 0 0 75px;
 }
+
+// SECTION 6
+
+.sectionSix {
+  background: #4BA87D;
+  padding: 100px;
+  text-align: center;
+}
+
+.sectionSix__text {
+  font-family: Playfair Display;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 80px;
+  color: #fff;
+  margin: 0 0 40px;
+}
+
+.sectionSix__btn {
+  font-family: Raleway;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: 1.05px;
+  background: #fff;
+  color: #4BA87D;
+  padding: 20px 48px;
+  border: 3px solid #fff;
+  margin-right: 45px;
+  display: inline-block;
+}

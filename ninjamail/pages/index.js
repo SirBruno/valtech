@@ -125,6 +125,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="sectionSix">
+        <h2 className="sectionSix__text">Get started today!</h2>
+        <span className="sectionSix__btn">PICK A PLAN</span>
+      </section>
     </div>
   )
 }
