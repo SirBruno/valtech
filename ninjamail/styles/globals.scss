@@ -469,3 +469,50 @@ body {
   margin-right: 45px;
   display: inline-block;
 }
+
+// SECTION 7
+
+.sectionSeven {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  align-items: flex-start;
+}
+
+.sectionSeven__logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.sectionSeven__logoImg {
+  margin-right: 10px;
+}
+
+.sectionSeven__logoText {
+  font-family: Raleway;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 31px;
+  margin: 0;
+}
+
+.sectionSix__linksContainer {
+  display: flex;
+}
+
+.sectionSeven__linksCol {
+  list-style: none;
+  font-family: Raleway;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 22px;
+  margin: 0;
+}
+
+.sectionSeven__linksCol:not(:last-child) {
+  padding-right: 50px;
+}
+
+.sectionSeven__link:not(:last-child) {
+  margin-bottom: 10px;
+}
