@@ -130,37 +130,48 @@ export default function Home() {
         <span className="sectionSix__btn">PICK A PLAN</span>
       </section>
       <section className="sectionSeven">
-        <div className="sectionSeven__logoContainer">
-          <Image className="sectionSeven__logoImg" src="/ninjamail-logo.png" alt="NinjaMail Logo" height={35} width={63} />
-          <h2 className="sectionSeven__logoText">NinjaMail</h2>
+        <div className="sectionSeven__footerTop">
+          <div className="sectionSeven__logoContainer">
+            <Image className="sectionSeven__logoImg" src="/ninjamail-logo.png" alt="NinjaMail Logo" height={35} width={63} />
+            <h2 className="sectionSeven__logoText">NinjaMail</h2>
+          </div>
+          <div className="sectionSeven__linksContainer">
+            <ul className="sectionSeven__linksCol">
+              <li className="sectionSeven__link">Features</li>
+              <li className="sectionSeven__link">Pricing</li>
+              <li className="sectionSeven__link">Services</li>
+              <li className="sectionSeven__link">Partners</li>
+            </ul>
+            <ul className="sectionSeven__linksCol">
+              <li className="sectionSeven__link">About Us</li>
+              <li className="sectionSeven__link">Tutorials</li>
+              <li className="sectionSeven__link">Resources</li>
+              <li className="sectionSeven__link">Help Center</li>
+              <li className="sectionSeven__link">Templates</li>
+              <li className="sectionSeven__link">Case Studies</li>
+            </ul>
+            <ul className="sectionSeven__linksCol">
+              <li className="sectionSeven__link">Medium</li>
+              <li className="sectionSeven__link">Twitter</li>
+              <li className="sectionSeven__link">Facebook</li>
+              <li className="sectionSeven__link">Instagram</li>
+              <li className="sectionSeven__link">LinkedIn</li>
+            </ul>
+            <ul className="sectionSeven__linksCol">
+              <li className="sectionSeven__link">Contact Us</li>
+              <li className="sectionSeven__link">Slack</li>
+              <li className="sectionSeven__link">Jobs</li>
+            </ul>
+          </div>
         </div>
-        <div className="sectionSix__linksContainer">
-          <ul className="sectionSeven__linksCol">
-            <li className="sectionSeven__link">Features</li>
-            <li className="sectionSeven__link">Pricing</li>
-            <li className="sectionSeven__link">Services</li>
-            <li className="sectionSeven__link">Partners</li>
-          </ul>
-          <ul className="sectionSeven__linksCol">
-            <li className="sectionSeven__link">About Us</li>
-            <li className="sectionSeven__link">Tutorials</li>
-            <li className="sectionSeven__link">Resources</li>
-            <li className="sectionSeven__link">Help Center</li>
-            <li className="sectionSeven__link">Templates</li>
-            <li className="sectionSeven__link">Case Studies</li>
-          </ul>
-          <ul className="sectionSeven__linksCol">
-            <li className="sectionSeven__link">Medium</li>
-            <li className="sectionSeven__link">Twitter</li>
-            <li className="sectionSeven__link">Facebook</li>
-            <li className="sectionSeven__link">Instagram</li>
-            <li className="sectionSeven__link">LinkedIn</li>
-          </ul>
-          <ul className="sectionSeven__linksCol">
-            <li className="sectionSeven__link">Contact Us</li>
-            <li className="sectionSeven__link">Slack</li>
-            <li className="sectionSeven__link">Jobs</li>
-          </ul>
+        <div className="sectionSeven__footerBottom">
+          <div>
+            <p>NinjaMail is a sample project for Quest AI. ©{new Date().getFullYear()} Quest AI, All rights reserved.</p>
+          </div>
+          <div>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+          </div>
         </div>
       </section>
     </div>

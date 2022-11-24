@@ -226,6 +226,10 @@ body {
   left: 0;
 }
 
+.sectionThree__card:first-child {
+  margin-top: -150px;
+}
+
 .sectionThree__card {
   position: relative;
   margin-right: 47px;
@@ -473,10 +477,15 @@ body {
 // SECTION 7
 
 .sectionSeven {
+  padding: 100px 100px 40px;
+}
+
+.sectionSeven__footerTop {
   display: flex;
   justify-content: space-between;
-  padding: 100px;
   align-items: flex-start;
+  border-bottom: 2px solid #DBDBDB;
+  padding: 0 0 75px;
 }
 
 .sectionSeven__logoContainer {
@@ -496,7 +505,7 @@ body {
   margin: 0;
 }
 
-.sectionSix__linksContainer {
+.sectionSeven__linksContainer {
   display: flex;
 }
 
@@ -515,4 +524,25 @@ body {
 
 .sectionSeven__link:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.sectionSeven__footerBottom {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionSeven__footerBottom div:nth-child(2) {
+  display: flex;
+}
+
+.sectionSeven__footerBottom p {
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.sectionSeven__footerBottom div:nth-child(2) p:first-child {
+  margin-right: 35px;
 }
