@@ -3,6 +3,9 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <div>
+      <div className="floatingElements">
+        <Image className="floatingElements__img" src="/floating-elements.png" alt="Floating elements" fill quality={100} />
+      </div>
       <main className="hero">
         <nav className="hero__nav">
           <div className="hero__logo">

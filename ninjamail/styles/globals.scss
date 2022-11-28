@@ -21,6 +21,17 @@ body {
   margin: auto;
 }
 
+.floatingElements {
+  position: relative;
+  max-width: 1440px;
+}
+
+.floatingElements__img {
+  padding: 114px 0 0;
+  height: auto !important;
+  z-index: 1;
+}
+
 .hero {
   padding: 0 100px;
   height: 100vh;
@@ -95,7 +106,7 @@ body {
 }
 
 .hero__leftSide {
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__title {
@@ -154,6 +165,7 @@ body {
   height: 481.19px;
   right: 0;
   filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.160784));
+  z-index: 1;
 }
 
 
