@@ -70,7 +70,7 @@ export default function Home() {
         </div>
         <div>
           <h2 className="sectionThree__title">The source for proven, engaging email campaigns</h2>
-          <p className="sectionThree__subtitle">{"Whether you're a startup, small business, e-commerce store, or want to promote your app, NinjaMail has the feature set tailored for your business."}</p>
+          <p className="sectionThree__p">{"Whether you're a startup, small business, e-commerce store, or want to promote your app, NinjaMail has the feature set tailored for your business."}</p>
         </div>
         <div className="sectionThree__bg">
           <Image src="/slanted-green-bg.png" alt="Background" fill quality={100} />
@@ -140,30 +140,30 @@ export default function Home() {
           </div>
           <div className="sectionSeven__linksContainer">
             <ul className="sectionSeven__linksCol">
-              <li className="sectionSeven__link">Features</li>
-              <li className="sectionSeven__link">Pricing</li>
-              <li className="sectionSeven__link">Services</li>
-              <li className="sectionSeven__link">Partners</li>
+              <li className="sectionSeven__link"><a>Features</a></li>
+              <li className="sectionSeven__link"><a>Pricing</a></li>
+              <li className="sectionSeven__link"><a>Services</a></li>
+              <li className="sectionSeven__link"><a>Partners</a></li>
             </ul>
             <ul className="sectionSeven__linksCol">
-              <li className="sectionSeven__link">About Us</li>
-              <li className="sectionSeven__link">Tutorials</li>
-              <li className="sectionSeven__link">Resources</li>
-              <li className="sectionSeven__link">Help Center</li>
-              <li className="sectionSeven__link">Templates</li>
-              <li className="sectionSeven__link">Case Studies</li>
+              <li className="sectionSeven__link"><a>About Us</a></li>
+              <li className="sectionSeven__link"><a>Tutorials</a></li>
+              <li className="sectionSeven__link"><a>Resources</a></li>
+              <li className="sectionSeven__link"><a>Help Center</a></li>
+              <li className="sectionSeven__link"><a>Templates</a></li>
+              <li className="sectionSeven__link"><a>Case Studies</a></li>
             </ul>
             <ul className="sectionSeven__linksCol">
-              <li className="sectionSeven__link">Medium</li>
-              <li className="sectionSeven__link">Twitter</li>
-              <li className="sectionSeven__link">Facebook</li>
-              <li className="sectionSeven__link">Instagram</li>
-              <li className="sectionSeven__link">LinkedIn</li>
+              <li className="sectionSeven__link"><a>Medium</a></li>
+              <li className="sectionSeven__link"><a>Twitter</a></li>
+              <li className="sectionSeven__link"><a>Facebook</a></li>
+              <li className="sectionSeven__link"><a>Instagram</a></li>
+              <li className="sectionSeven__link"><a>LinkedIn</a></li>
             </ul>
             <ul className="sectionSeven__linksCol">
-              <li className="sectionSeven__link">Contact Us</li>
-              <li className="sectionSeven__link">Slack</li>
-              <li className="sectionSeven__link">Jobs</li>
+              <li className="sectionSeven__link"><a>Contact Us</a></li>
+              <li className="sectionSeven__link"><a>Slack</a></li>
+              <li className="sectionSeven__link"><a>Jobs</a></li>
             </ul>
           </div>
         </div>

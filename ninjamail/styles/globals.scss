@@ -1,29 +1,63 @@
-a {
+@mixin title($color, $value, $fontSize) {
+  font-family: 'Playfair Display';
+  font-size: $fontSize;
+  font-weight: 900;
+  line-height: 120%;
+  margin: 0;
+  #{$color}: $value;
+}
+
+@mixin paragraph($fontSize, $value) {
+  font-family: 'Raleway';
+  #{$fontSize}: $value;
+  line-height: 140%;
+  margin: 0;
+  font-weight: 500;
+}
+
+@mixin link {
+  @include paragraph(font-size, 19px);
+  list-style: none;
+  font-weight: 700;
   color: inherit;
   text-decoration: none;
+}
+
+@mixin btn($color, $background, $border) {
+  font-family: Raleway;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: 1.05px;
+  background: $background;
+  color: $color;
+  padding: 20px 48px;
+  border: 3px solid $border;
+  margin-right: 45px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
+html {
   font-family: 'Raleway', 'sans-serif';
   background: #eee;
 }
 
 body {
-  max-width: 1440px;
   background: #fff;
   margin: auto;
-}
-
-.floatingElements {
   position: relative;
-  max-width: 1440px;
+
+  &,
+  .floatingElements {
+    max-width: 1440px;
+  }
+
+  & section {
+    padding: 100px;
+  }
 }
 
 .floatingElements__img {
@@ -33,8 +67,8 @@ body {
 }
 
 .hero {
-  padding: 0 100px;
   height: 100vh;
+  padding: 0 100px;
 }
 
 .hero__nav {
@@ -110,22 +144,16 @@ body {
 }
 
 .hero__title {
-  font-family: Playfair Display;
-  font-size: 59px;
-  font-weight: 900;
-  line-height: 71px;
-  margin: 0;
+  @include title(color, #000, 59px);
+
   width: 489px;
-  margin-bottom: 23px;
+  padding-bottom: 23px;
 }
 
 .hero__subtitle {
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 26px;
+  @include paragraph(font-size, 19px);
+
   width: 489px;
-  margin: 0;
 }
 
 .hero__btnContainer {
@@ -134,29 +162,11 @@ body {
 }
 
 .hero__btn--primary {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #4BA87D;
-  color: #fff;
-  padding: 20px 48px;
-  border: 3px solid #4BA87D;
-  margin-right: 45px;
+  @include btn(#fff, #4BA87D, #4BA87D);
 }
 
 .hero__btn--secondary {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 2.1px;
-  background: #FFFFFF;
-  border: 3px solid #4BA87D;
-  color: #4BA87D;
-  box-sizing: border-box;
-  padding: 20px 48px;
+  @include btn(#4BA87D, #fff, #4BA87D);
 }
 
 .hero__imgContainer {
@@ -168,14 +178,11 @@ body {
   z-index: 1;
 }
 
-
 .hero__img {
   object-fit: contain;
   z-index: -1;
   left: -28.68px;
 }
-
-// SECTION 2
 
 .sectionTwo {
   height: 744px;
@@ -200,35 +207,24 @@ body {
 }
 
 .sectionTwo__ctaText {
-  font-family: 'Playfair Display';
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 80px;
-  color: #fff;
-  margin: 0 0 60px;
+  @include title(color, #fff, 59px);
+  padding-bottom: 60px;
 }
 
 .sectionTwo__ctaBtn {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #fff;
-  color: #4BA87D;
-  padding: 20px 48px;
-  border: 3px solid #fff;
-  margin-right: 45px;
-  display: inline-block;
+  @include btn(#4BA87D, #fff, #fff);
 }
-
-// SECTION 3
 
 .sectionThree {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 100px;
+
+  & .sectionThree__title,
+  .sectionThree__p {
+    z-index: 1;
+    position: relative;
+  }
 }
 
 .sectionThree__bg {
@@ -266,46 +262,25 @@ body {
 }
 
 .sectionThree__cardText {
-  font-family: Raleway;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 26px;
-  margin: 0 0 24px;
+  @include paragraph(font-size, 16px);
+  padding-bottom: 24px;
 }
 
 .sectionThree__cardCta {
-  font-family: Raleway;
-  font-size: 16px;
+  @include paragraph(font-size, 16px);
   font-weight: 800;
-  line-height: 19px;
   color: #4BA87D;
 }
 
-
 .sectionThree__title {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  z-index: 1;
-  position: relative;
+  @include title(color, #000, 48px);
 }
 
-
-.sectionThree__subtitle {
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 26px;
+.sectionThree__p {
+  @include paragraph(font-size, 19px);
+  padding-top: 20px;
   z-index: 1;
   position: relative;
-}
-
-
-// SECTION 4
-
-.sectionFour {
-  padding: 100px;
 }
 
 .sectionFour .sectionFour__cards {
@@ -332,24 +307,17 @@ body {
 }
 
 .sectionFour h3 {
+  @include paragraph(font-size, 34px);
   position: relative;
   z-index: 1;
-  margin: 0;
-  font-family: Raleway;
-  font-size: 34px;
   font-weight: 900;
-  line-height: 40px;
   color: #fff;
 }
 
 .sectionFour p {
+  @include paragraph(font-size, 19px);
   position: relative;
   z-index: 1;
-  margin: 0;
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 22px;
   color: #fff;
 }
 
@@ -364,54 +332,28 @@ body {
 }
 
 .sectionFour__newsletter h2 {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  letter-spacing: 0px;
+  @include title(color, #000, 48px);
+  padding: 32px 0;
 }
 
 .sectionFour__newsletter input[type="email"] {
-  box-sizing: border-box;
+  @include paragraph(font-size, 21px);
   width: 420px;
   height: 65px;
-  background: #FFFFFF;
   border: 1px solid #9F9F9F;
   border-radius: 5px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  /* identical to box height, or 119% */
-  letter-spacing: 1.05px;
-  color: #000000;
   padding: 20px 25px;
   margin-right: 27px;
-}
-
-.sectionFour__newsletter input[type="email"]::placeholder {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  /* identical to box height, or 119% */
-  letter-spacing: 1.05px;
-  color: #000000;
 }
 
 .sectionFour__newsletter input[type="submit"] {
   width: 221px;
   height: 65px;
   background: #4BA87D;
-  box-sizing: border-box;
   border: none;
   font-family: Raleway;
   font-size: 21px;
   font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.0499999523162842px;
   color: #fff;
 }
 
@@ -420,9 +362,7 @@ body {
   justify-content: center;
 }
 
-// SECTION 5
 .sectionFive {
-  padding: 0 75px 100px;
   text-align: center;
 }
 
@@ -448,52 +388,36 @@ body {
 }
 
 .sectionFive__text {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  margin: 0 0 75px;
+  @include title(color, #000, 48px);
+  padding-bottom: 75px;
 }
-
-// SECTION 6
 
 .sectionSix {
   background: #4BA87D;
-  padding: 100px;
   text-align: center;
 }
 
 .sectionSix__text {
-  font-family: Playfair Display;
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 80px;
-  color: #fff;
-  margin: 0 0 40px;
+  @include title(color, #fff, 59px);
+  padding-bottom: 40px;
 }
 
 .sectionSix__btn {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #fff;
-  color: #4BA87D;
-  padding: 20px 48px;
-  border: 3px solid #fff;
-  margin-right: 45px;
-  display: inline-block;
+  @include btn(#4BA87D, #fff, #fff);
 }
 
-// SECTION 7
-
 .sectionSeven {
-  padding: 100px 100px 40px;
+
+  & .sectionSeven__logoContainer,
+  .sectionSeven__linksContainer,
+  .sectionSeven__footerBottom,
+  .sectionSeven__footerBottom div:nth-child(2),
+  .sectionSeven__footerTop {
+    display: flex;
+  }
 }
 
 .sectionSeven__footerTop {
-  display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 2px solid #DBDBDB;
@@ -501,7 +425,6 @@ body {
 }
 
 .sectionSeven__logoContainer {
-  display: flex;
   align-items: center;
 }
 
@@ -517,17 +440,8 @@ body {
   margin: 0;
 }
 
-.sectionSeven__linksContainer {
-  display: flex;
-}
-
 .sectionSeven__linksCol {
-  list-style: none;
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 22px;
-  margin: 0;
+  @include link;
 }
 
 .sectionSeven__linksCol:not(:last-child) {
@@ -540,19 +454,12 @@ body {
 
 .sectionSeven__footerBottom {
   padding-top: 40px;
-  display: flex;
   justify-content: space-between;
 }
 
-.sectionSeven__footerBottom div:nth-child(2) {
-  display: flex;
-}
-
 .sectionSeven__footerBottom p {
-  font-family: Raleway;
-  font-size: 15px;
+  @include paragraph(font-size, 15px);
   font-weight: 700;
-  line-height: 18px;
 }
 
 .sectionSeven__footerBottom div:nth-child(2) p:first-child {
