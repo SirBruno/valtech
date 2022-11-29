@@ -9,7 +9,9 @@ export default function Home() {
       <main className="hero">
         <nav className="hero__nav">
           <div className="hero__logo">
-            <Image src="/ninjamail-logo.png" alt="NinjaMail Logo" height={35} width={63} />
+            <div className="hero__logoContainer">
+              <Image className="hero__logoImg" src="/ninjamail-logo.png" alt="NinjaMail Logo" fill quality={100} />
+            </div>
             <h2>NinjaMail</h2>
           </div>
           <div>
