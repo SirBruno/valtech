@@ -23,7 +23,7 @@
   text-decoration: none;
 }
 
-@mixin btn($color, $background, $border) {
+@mixin btnLarge($color, $background, $border) {
   font-family: Raleway;
   font-size: 21px;
   font-weight: 900;
@@ -33,7 +33,18 @@
   color: $color;
   padding: 20px 48px;
   border: 3px solid $border;
-  margin-right: 45px;
+}
+
+@mixin btnSmall($color, $background, $border) {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 1.05px;
+  background: $background;
+  color: $color;
+  padding: 10px 20px;
+  border: 3px solid $border;
 }
 
 * {
@@ -170,11 +181,11 @@ body {
 }
 
 .hero__btn--primary {
-  @include btn(#fff, #4BA87D, #4BA87D);
+  @include btnLarge(#fff, #4BA87D, #4BA87D);
 }
 
 .hero__btn--secondary {
-  @include btn(#4BA87D, #fff, #4BA87D);
+  @include btnLarge(#4BA87D, #fff, #4BA87D);
 }
 
 .hero__imgContainer {
@@ -220,7 +231,7 @@ body {
 }
 
 .sectionTwo__ctaBtn {
-  @include btn(#4BA87D, #fff, #fff);
+  @include btnLarge(#4BA87D, #fff, #fff);
 }
 
 .sectionThree {
@@ -337,6 +348,8 @@ body {
   padding: 40px 0 75px;
   text-align: center;
   padding: 0 10%;
+  z-index: 1;
+  position: relative;
 }
 
 .sectionFour__newsletter h2 {
@@ -411,7 +424,7 @@ body {
 }
 
 .sectionSix__btn {
-  @include btn(#4BA87D, #fff, #fff);
+  @include btnLarge(#4BA87D, #fff, #fff);
 }
 
 .sectionSeven {
@@ -521,5 +534,115 @@ body {
 
   .hero__middle {
     top: 40px;
+  }
+
+  .hero__btn--primary {
+    @include btnSmall(#fff, #4BA87D, #4BA87D);
+  }
+  
+  .hero__btn--secondary {
+    @include btnSmall(#4BA87D, #fff, #4BA87D);
+  }
+
+  .sectionTwo__imgContainer {
+    height: 400px;
+    width: 100%;
+  }
+
+  .sectionTwo {
+    height: auto;
+    padding: 100px 24px;
+  }
+
+  .sectionTwo__ctaText {
+    font-size: 40px;
+  }
+
+  .sectionTwo__ctaBtn {
+    @include btnSmall(#4BA87D, #fff, #fff);
+  }
+
+  .sectionThree__title {
+    font-size: 28px;
+  }
+
+  .sectionThree__p {
+    font-size: 16px;
+  }
+
+  .sectionThree__card {
+    margin-right: 24px;
+  }
+
+  .sectionThree__imgContainer {
+    height: 160px;
+  }
+
+  .sectionFour h3 {
+    font-size: 24px;
+  }
+
+  .sectionFour p {
+    font-size: 16px;
+  }
+
+  .sectionFour .sectionFour__cards > div {
+    height: 160px;
+  }
+
+  .sectionFour .sectionFour__cards > div:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  .sectionFour .sectionFour__cards div div {
+    padding: 16px;
+  }
+
+  .sectionFour__newsletter h2 {
+    font-size: 32px;
+  }
+
+  .sectionFour__newsletter input[type=email] {
+    font-size: 16px;
+    width: 275px;
+    height: 48px;
+    margin-right: 16px;
+  }
+
+  .sectionFour__newsletter input[type=submit] {
+    width: 144px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .sectionFive__text {
+    font-size: 32px;
+  }
+
+  .sectionSix__text {
+    font-size: 32px;
+  }
+
+  .sectionSix__btn {
+    @include btnSmall(#4BA87D, #fff, #fff);
+  }
+
+  .sectionSix {
+    padding: 50px;
+  }
+
+  .sectionSeven__linksCol {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .sectionSeven .sectionSeven__footerBottom,
+  .sectionSeven .sectionSeven__footerBottom div:nth-child(2) {
+    display: block;
+  }
+
+  .sectionSeven__footerBottom p {
+    font-size: 14px;
+    padding-bottom: 4px;
   }
 }
