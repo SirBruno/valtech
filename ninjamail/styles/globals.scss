@@ -646,3 +646,79 @@ body {
     padding-bottom: 4px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .hero__nav ul {
+    display: none;
+  }
+
+  .hero__logo h2 {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+    margin-left: 8px;
+  }
+
+  .sectionSeven .sectionSeven__linksContainer {
+    display: block;
+  }
+
+  .sectionSeven__linksCol:not(:last-child) {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionThree {
+    display: block;
+  }
+
+  .sectionThree__card:first-child {
+    margin-top: 0;
+  }
+
+  .sectionThree__card {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionFour .sectionFour__cards {
+    display: block;
+  }
+
+  .sectionFour .sectionFour__cards > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionFour .sectionFour__cards > div {
+    height: 210px;
+  }
+
+  .sectionFive__imgContainer:not(:last-child) {
+    margin-right: 0;
+    max-width: 50%;
+    display: inline-block;
+  }
+
+  .sectionFive__imgContainer {
+    margin: 10px 0;
+    height: 30px;
+  }
+
+  .sectionFive__logos {
+    display: block;
+  }
+  
+  .sectionTwo__imgContainer img {
+    object-fit: cover;
+  }
+
+  .sectionTwo__imgContainer {
+    height: 300px;
+    width: 100%;
+  }
+
+  .sectionThree__imgContainer {
+    height: 210px;
+  }
+}
