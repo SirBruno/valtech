@@ -182,6 +182,7 @@ body {
 
 .hero__btn--primary {
   @include btnLarge(#fff, #4BA87D, #4BA87D);
+  margin-right: 45px;
 }
 
 .hero__btn--secondary {
@@ -659,13 +660,41 @@ body {
     margin-left: 8px;
   }
 
+  .hero__btn--primary {
+    margin-right: 15px;
+  }
+
+  .sectionTwo {
+    padding: 100px 24px 8px;
+  }
+
+  .sectionFour__newsletter div {
+    flex-direction: column;
+  }
+
+  .sectionFour__newsletter input[type=email] {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .sectionFour__newsletter input[type=submit] {
+    margin: 0 auto;
+  }
+
   .sectionSeven .sectionSeven__linksContainer {
     display: block;
+    width: 100%;
+    column-count: 2;
   }
 
   .sectionSeven__linksCol:not(:last-child) {
     padding-right: 0;
     margin-bottom: 24px;
+  }
+
+  .sectionSeven__linksCol {
+    break-inside: avoid;
   }
 
   .sectionThree {
