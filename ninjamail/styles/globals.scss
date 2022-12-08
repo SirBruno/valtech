@@ -514,10 +514,6 @@ body {
     margin-right: 0;
   }
 
-  .sectionSeven .sectionSeven__logoContainer {
-    display: none;
-  }
-
   .hero__title {
     @include title(color, #000, 40px);
     width: 60%;
@@ -632,6 +628,10 @@ body {
     padding: 50px;
   }
 
+  .sectionSeven .sectionSeven__logoContainer {
+    display: none;
+  }
+
   .sectionSeven__linksCol {
     font-size: 16px;
     padding: 0;
@@ -667,34 +667,18 @@ body {
   .sectionTwo {
     padding: 100px 24px 8px;
   }
-
-  .sectionFour__newsletter div {
-    flex-direction: column;
+  
+  .sectionTwo__imgContainer img {
+    object-fit: cover;
   }
 
-  .sectionFour__newsletter input[type=email] {
-    margin-right: 0;
-    margin-bottom: 16px;
+  .sectionTwo__imgContainer {
+    height: 300px;
     width: 100%;
   }
 
-  .sectionFour__newsletter input[type=submit] {
-    margin: 0 auto;
-  }
-
-  .sectionSeven .sectionSeven__linksContainer {
-    display: block;
-    width: 100%;
-    column-count: 2;
-  }
-
-  .sectionSeven__linksCol:not(:last-child) {
-    padding-right: 0;
-    margin-bottom: 24px;
-  }
-
-  .sectionSeven__linksCol {
-    break-inside: avoid;
+  .sectionThree__imgContainer {
+    height: 210px;
   }
 
   .sectionThree {
@@ -710,6 +694,20 @@ body {
     margin-bottom: 24px;
   }
 
+  .sectionFour__newsletter div {
+    flex-direction: column;
+  }
+
+  .sectionFour__newsletter input[type=email] {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .sectionFour__newsletter input[type=submit] {
+    margin: 0 auto;
+  }
+
   .sectionFour .sectionFour__cards {
     display: block;
   }
@@ -723,6 +721,10 @@ body {
     height: 210px;
   }
 
+  .sectionFive__logos {
+    display: block;
+  }
+
   .sectionFive__imgContainer:not(:last-child) {
     margin-right: 0;
     max-width: 50%;
@@ -734,20 +736,18 @@ body {
     height: 30px;
   }
 
-  .sectionFive__logos {
+  .sectionSeven .sectionSeven__linksContainer {
     display: block;
-  }
-  
-  .sectionTwo__imgContainer img {
-    object-fit: cover;
-  }
-
-  .sectionTwo__imgContainer {
-    height: 300px;
     width: 100%;
+    column-count: 2;
   }
 
-  .sectionThree__imgContainer {
-    height: 210px;
+  .sectionSeven__linksCol:not(:last-child) {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionSeven__linksCol {
+    break-inside: avoid;
   }
 }
