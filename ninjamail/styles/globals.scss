@@ -1,29 +1,85 @@
-a {
+@mixin title($color, $value, $fontSize) {
+  font-family: 'Playfair Display';
+  font-size: $fontSize;
+  font-weight: 900;
+  line-height: 120%;
+  margin: 0;
+  #{$color}: $value;
+}
+
+@mixin paragraph($fontSize, $value) {
+  font-family: 'Raleway';
+  #{$fontSize}: $value;
+  line-height: 140%;
+  margin: 0;
+  font-weight: 500;
+}
+
+@mixin link {
+  @include paragraph(font-size, 19px);
+  list-style: none;
+  font-weight: 700;
   color: inherit;
   text-decoration: none;
+}
+
+@mixin btnLarge($color, $background, $border) {
+  font-family: Raleway;
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 25px;
+  letter-spacing: 1.05px;
+  background: $background;
+  color: $color;
+  padding: 20px 48px;
+  border: 3px solid $border;
+}
+
+@mixin btnSmall($color, $background, $border) {
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 1.05px;
+  background: $background;
+  color: $color;
+  padding: 10px 20px;
+  border: 3px solid $border;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
+html {
   font-family: 'Raleway', 'sans-serif';
   background: #eee;
 }
 
 body {
-  max-width: 1440px;
   background: #fff;
   margin: auto;
+  position: relative;
+
+  &,
+  .floatingElements {
+    max-width: 1440px;
+  }
+
+  & section {
+    padding: 100px;
+  }
+}
+
+.floatingElements__img {
+  padding: 114px 0 0;
+  height: auto !important;
+  z-index: 1;
 }
 
 .hero {
-  padding: 0 100px;
   height: 100vh;
+  padding: 0 100px;
 }
 
 .hero__nav {
@@ -73,10 +129,6 @@ body {
 .hero__logo {
   align-items: center;
 
-  & img {
-    margin-right: 13px;
-  }
-
   & h2 {
     font-size: 35px;
     font-weight: 900;
@@ -84,8 +136,20 @@ body {
   }
 }
 
+.hero__logoContainer {
+  height: 35px;
+  position: relative;
+  width: 100%;
+  margin-right: 13px;
+}
+
+.hero__logoImg {
+  position: relative !important;
+  object-fit: contain;
+}
+
 .hero__middle {
-  width: 1088px;
+  width: 100%;
   height: 383px;
   top: 105px;
   position: relative;
@@ -95,26 +159,20 @@ body {
 }
 
 .hero__leftSide {
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__title {
-  font-family: Playfair Display;
-  font-size: 59px;
-  font-weight: 900;
-  line-height: 71px;
-  margin: 0;
+  @include title(color, #000, 59px);
+
   width: 489px;
-  margin-bottom: 23px;
+  padding-bottom: 23px;
 }
 
 .hero__subtitle {
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 26px;
+  @include paragraph(font-size, 19px);
+
   width: 489px;
-  margin: 0;
 }
 
 .hero__btnContainer {
@@ -123,29 +181,12 @@ body {
 }
 
 .hero__btn--primary {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #4BA87D;
-  color: #fff;
-  padding: 20px 48px;
-  border: 3px solid #4BA87D;
+  @include btnLarge(#fff, #4BA87D, #4BA87D);
   margin-right: 45px;
 }
 
 .hero__btn--secondary {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 2.1px;
-  background: #FFFFFF;
-  border: 3px solid #4BA87D;
-  color: #4BA87D;
-  box-sizing: border-box;
-  padding: 20px 48px;
+  @include btnLarge(#4BA87D, #fff, #4BA87D);
 }
 
 .hero__imgContainer {
@@ -154,16 +195,14 @@ body {
   height: 481.19px;
   right: 0;
   filter: drop-shadow(0px 3px 16px rgba(0, 0, 0, 0.160784));
+  z-index: 1;
 }
-
 
 .hero__img {
   object-fit: contain;
   z-index: -1;
   left: -28.68px;
 }
-
-// SECTION 2
 
 .sectionTwo {
   height: 744px;
@@ -188,35 +227,24 @@ body {
 }
 
 .sectionTwo__ctaText {
-  font-family: 'Playfair Display';
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 80px;
-  color: #fff;
-  margin: 0 0 60px;
+  @include title(color, #fff, 59px);
+  padding-bottom: 60px;
 }
 
 .sectionTwo__ctaBtn {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #fff;
-  color: #4BA87D;
-  padding: 20px 48px;
-  border: 3px solid #fff;
-  margin-right: 45px;
-  display: inline-block;
+  @include btnLarge(#4BA87D, #fff, #fff);
 }
-
-// SECTION 3
 
 .sectionThree {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 100px;
+
+  & .sectionThree__title,
+  .sectionThree__p {
+    z-index: 1;
+    position: relative;
+  }
 }
 
 .sectionThree__bg {
@@ -224,6 +252,10 @@ body {
   position: absolute;
   width: 100%;
   left: 0;
+}
+
+.sectionThree__card:first-child {
+  margin-top: -150px;
 }
 
 .sectionThree__card {
@@ -250,46 +282,25 @@ body {
 }
 
 .sectionThree__cardText {
-  font-family: Raleway;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 26px;
-  margin: 0 0 24px;
+  @include paragraph(font-size, 16px);
+  padding-bottom: 24px;
 }
 
 .sectionThree__cardCta {
-  font-family: Raleway;
-  font-size: 16px;
+  @include paragraph(font-size, 16px);
   font-weight: 800;
-  line-height: 19px;
   color: #4BA87D;
 }
 
-
 .sectionThree__title {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  z-index: 1;
-  position: relative;
+  @include title(color, #000, 48px);
 }
 
-
-.sectionThree__subtitle {
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 26px;
+.sectionThree__p {
+  @include paragraph(font-size, 19px);
+  padding-top: 20px;
   z-index: 1;
   position: relative;
-}
-
-
-// SECTION 4
-
-.sectionFour {
-  padding: 100px;
 }
 
 .sectionFour .sectionFour__cards {
@@ -316,24 +327,17 @@ body {
 }
 
 .sectionFour h3 {
+  @include paragraph(font-size, 34px);
   position: relative;
   z-index: 1;
-  margin: 0;
-  font-family: Raleway;
-  font-size: 34px;
   font-weight: 900;
-  line-height: 40px;
   color: #fff;
 }
 
 .sectionFour p {
+  @include paragraph(font-size, 19px);
   position: relative;
   z-index: 1;
-  margin: 0;
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 22px;
   color: #fff;
 }
 
@@ -345,57 +349,33 @@ body {
   padding: 40px 0 75px;
   text-align: center;
   padding: 0 10%;
+  z-index: 1;
+  position: relative;
 }
 
 .sectionFour__newsletter h2 {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  letter-spacing: 0px;
+  @include title(color, #000, 48px);
+  padding: 32px 0;
 }
 
 .sectionFour__newsletter input[type="email"] {
-  box-sizing: border-box;
+  @include paragraph(font-size, 21px);
   width: 420px;
   height: 65px;
-  background: #FFFFFF;
   border: 1px solid #9F9F9F;
   border-radius: 5px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  /* identical to box height, or 119% */
-  letter-spacing: 1.05px;
-  color: #000000;
   padding: 20px 25px;
   margin-right: 27px;
-}
-
-.sectionFour__newsletter input[type="email"]::placeholder {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-  /* identical to box height, or 119% */
-  letter-spacing: 1.05px;
-  color: #000000;
 }
 
 .sectionFour__newsletter input[type="submit"] {
   width: 221px;
   height: 65px;
   background: #4BA87D;
-  box-sizing: border-box;
   border: none;
   font-family: Raleway;
   font-size: 21px;
   font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.0499999523162842px;
   color: #fff;
 }
 
@@ -404,9 +384,7 @@ body {
   justify-content: center;
 }
 
-// SECTION 5
 .sectionFive {
-  padding: 0 75px 100px;
   text-align: center;
 }
 
@@ -432,55 +410,43 @@ body {
 }
 
 .sectionFive__text {
-  font-family: Playfair Display;
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 48px;
-  margin: 0 0 75px;
+  @include title(color, #000, 48px);
+  padding-bottom: 75px;
 }
-
-// SECTION 6
 
 .sectionSix {
   background: #4BA87D;
-  padding: 100px;
   text-align: center;
 }
 
 .sectionSix__text {
-  font-family: Playfair Display;
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 80px;
-  color: #fff;
-  margin: 0 0 40px;
+  @include title(color, #fff, 59px);
+  padding-bottom: 40px;
 }
 
 .sectionSix__btn {
-  font-family: Raleway;
-  font-size: 21px;
-  font-weight: 900;
-  line-height: 25px;
-  letter-spacing: 1.05px;
-  background: #fff;
-  color: #4BA87D;
-  padding: 20px 48px;
-  border: 3px solid #fff;
-  margin-right: 45px;
-  display: inline-block;
+  @include btnLarge(#4BA87D, #fff, #fff);
 }
 
-// SECTION 7
-
 .sectionSeven {
-  display: flex;
+
+  & .sectionSeven__logoContainer,
+  .sectionSeven__linksContainer,
+  .sectionSeven__footerBottom,
+  .sectionSeven__footerBottom div:nth-child(2),
+  .sectionSeven__footerTop {
+    display: flex;
+  }
+}
+
+.sectionSeven__footerTop {
   justify-content: space-between;
-  padding: 100px;
   align-items: flex-start;
+  border-bottom: 2px solid #DBDBDB;
+  padding: 0 0 75px;
 }
 
 .sectionSeven__logoContainer {
-  display: flex;
   align-items: center;
 }
 
@@ -496,17 +462,8 @@ body {
   margin: 0;
 }
 
-.sectionSix__linksContainer {
-  display: flex;
-}
-
 .sectionSeven__linksCol {
-  list-style: none;
-  font-family: Raleway;
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 22px;
-  margin: 0;
+  @include link;
 }
 
 .sectionSeven__linksCol:not(:last-child) {
@@ -515,4 +472,282 @@ body {
 
 .sectionSeven__link:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.sectionSeven__footerBottom {
+  padding-top: 40px;
+  justify-content: space-between;
+}
+
+.sectionSeven__footerBottom p {
+  @include paragraph(font-size, 15px);
+  font-weight: 700;
+}
+
+.sectionSeven__footerBottom div:nth-child(2) p:first-child {
+  margin-right: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    & section {
+      padding: 24px;
+    }
+  }
+
+  .hero {
+    height: auto;
+    padding: 0 24px;
+  }
+
+  .hero__logo h2 {
+    display: none;
+  }
+
+  .hero__nav {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .hero__logoContainer {
+    height: 24px;
+    margin-right: 0;
+  }
+
+  .hero__title {
+    @include title(color, #000, 40px);
+    width: 60%;
+  }
+
+  .hero__subtitle {
+    @include paragraph(font-size, 16px);
+    width: 60%;
+  }
+
+  .hero__imgContainer {
+    width: 70%;
+    height: 100%;
+  }
+
+  .hero__middle {
+    top: 40px;
+  }
+
+  .hero__btn--primary {
+    @include btnSmall(#fff, #4BA87D, #4BA87D);
+  }
+  
+  .hero__btn--secondary {
+    @include btnSmall(#4BA87D, #fff, #4BA87D);
+  }
+
+  .sectionTwo__imgContainer {
+    height: 400px;
+    width: 100%;
+  }
+
+  .sectionTwo {
+    height: auto;
+    padding: 100px 24px;
+  }
+
+  .sectionTwo__ctaText {
+    font-size: 40px;
+  }
+
+  .sectionTwo__ctaBtn {
+    @include btnSmall(#4BA87D, #fff, #fff);
+  }
+
+  .sectionThree__title {
+    font-size: 28px;
+  }
+
+  .sectionThree__p {
+    font-size: 16px;
+  }
+
+  .sectionThree__card {
+    margin-right: 24px;
+  }
+
+  .sectionThree__imgContainer {
+    height: 160px;
+  }
+
+  .sectionFour h3 {
+    font-size: 24px;
+  }
+
+  .sectionFour p {
+    font-size: 16px;
+  }
+
+  .sectionFour .sectionFour__cards > div {
+    height: 160px;
+  }
+
+  .sectionFour .sectionFour__cards > div:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  .sectionFour .sectionFour__cards div div {
+    padding: 16px;
+  }
+
+  .sectionFour__newsletter h2 {
+    font-size: 32px;
+  }
+
+  .sectionFour__newsletter input[type=email] {
+    font-size: 16px;
+    width: 275px;
+    height: 48px;
+    margin-right: 16px;
+  }
+
+  .sectionFour__newsletter input[type=submit] {
+    width: 144px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .sectionFive__text {
+    font-size: 32px;
+  }
+
+  .sectionSix__text {
+    font-size: 32px;
+  }
+
+  .sectionSix__btn {
+    @include btnSmall(#4BA87D, #fff, #fff);
+  }
+
+  .sectionSix {
+    padding: 50px;
+  }
+
+  .sectionSeven .sectionSeven__logoContainer {
+    display: none;
+  }
+
+  .sectionSeven__linksCol {
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .sectionSeven .sectionSeven__footerBottom,
+  .sectionSeven .sectionSeven__footerBottom div:nth-child(2) {
+    display: block;
+  }
+
+  .sectionSeven__footerBottom p {
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero__nav ul {
+    display: none;
+  }
+
+  .hero__logo h2 {
+    display: block;
+    font-size: 24px;
+    line-height: 1;
+    margin-left: 8px;
+  }
+
+  .hero__btn--primary {
+    margin-right: 15px;
+  }
+
+  .sectionTwo {
+    padding: 100px 24px 8px;
+  }
+  
+  .sectionTwo__imgContainer img {
+    object-fit: cover;
+  }
+
+  .sectionTwo__imgContainer {
+    height: 300px;
+    width: 100%;
+  }
+
+  .sectionThree__imgContainer {
+    height: 210px;
+  }
+
+  .sectionThree {
+    display: block;
+  }
+
+  .sectionThree__card:first-child {
+    margin-top: 0;
+  }
+
+  .sectionThree__card {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionFour__newsletter div {
+    flex-direction: column;
+  }
+
+  .sectionFour__newsletter input[type=email] {
+    margin-right: 0;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .sectionFour__newsletter input[type=submit] {
+    margin: 0 auto;
+  }
+
+  .sectionFour .sectionFour__cards {
+    display: block;
+  }
+
+  .sectionFour .sectionFour__cards > div:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionFour .sectionFour__cards > div {
+    height: 210px;
+  }
+
+  .sectionFive__logos {
+    display: block;
+  }
+
+  .sectionFive__imgContainer:not(:last-child) {
+    margin-right: 0;
+    max-width: 50%;
+    display: inline-block;
+  }
+
+  .sectionFive__imgContainer {
+    margin: 10px 0;
+    height: 30px;
+  }
+
+  .sectionSeven .sectionSeven__linksContainer {
+    display: block;
+    width: 100%;
+    column-count: 2;
+  }
+
+  .sectionSeven__linksCol:not(:last-child) {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .sectionSeven__linksCol {
+    break-inside: avoid;
+  }
 }
